@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mask
   - Artifact
+  - PuzzlePiece
   layers:
   - Default
   - TransparentFX
