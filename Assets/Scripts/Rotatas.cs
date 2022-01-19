@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class Rotatas : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float rotationSpeed = 100f;
+    bool dragging = false;
+    Rigidbody rb;
+    Touch touch;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnMouseDown()
     {
-        
+        touch = Input.GetTouch(0);
+        dragging = true;
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            dragging = false;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (dragging)
+        {
+            touch = Input.GetTouch(0);
+            float x = touch.deltaPosition.x * rotationSpeed * Time.fixedDeltaTime;
+            float y = touch.deltaPosition.y * rotationSpeed * Time.fixedDeltaTime;
+            Debug.Log(touch.deltaPosition);
+
+            rb.AddTorque(Vector3.down * x);
+            rb.AddTorque(Vector3.right * y);
+        }
     }
 }
