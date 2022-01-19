@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Puzzle : MonoBehaviour
 {
-    public Transform connectPiece;
-    public Vector3 pieceOffset;
-    [SerializeField] PuzzlePiecePart[] points;
-
     bool followFinger;
     Vector3 fingerOffset;
     Touch theTouch;
-    [SerializeField] Collider2D col;
+    public Vector3 snapPosition;
+    public Vector3 originalPos;
+
+    Vector3 originalScale;
+    public bool hasPos = false;
+    public bool inRightPos = false;
+    public UnityEvent piecePlaced;
+
+    private void Start()
+    {
+        originalPos = transform.position;
+        snapPosition = originalPos;
+
+        originalScale = transform.localScale;
+    }
 
     private void Update()
     {
@@ -19,28 +30,29 @@ public class Puzzle : MonoBehaviour
         if (followFinger)
         {
             theTouch = Input.GetTouch(0);
-            transform.position = Camera.main.ScreenToWorldPoint(theTouch.position) + new Vector3(0, 0, 10) /*+fingerOffset*/;
-            foreach (PuzzlePiecePart item in points)
-            {
-                if (item.isConnect)
-                {
-                    item.connectedPiece.transform.position = transform.position + item.offset;
-                }
-            }
+            transform.position = Camera.main.ScreenToWorldPoint(theTouch.position) + new Vector3(0, 0, 10) +fingerOffset;
+
         }
     }
 
     private void OnMouseDown()
     {
+        transform.localScale = new Vector3(1, 1, 1);
         followFinger = true;
-        //fingerOffset = transform.position - (Camera.main.ScreenToWorldPoint(theTouch.position) + new Vector3(0, 0, 10));
-
+        theTouch = Input.GetTouch(0);
+        fingerOffset = transform.position - (Camera.main.ScreenToWorldPoint(theTouch.position) + new Vector3(0, 0, 10));
     }
 
     private void OnMouseUp()
     {
         followFinger = false;
+        transform.position = snapPosition;
+        transform.localScale = hasPos ? new Vector3(1, 1, 1) : originalScale;
+        if (hasPos && inRightPos)
+        {
+            piecePlaced.Invoke();
+            Debug.Log("event");
+        }
+
     }
-
-
 }
