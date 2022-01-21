@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Artifact : MonoBehaviour
 {
-    private void Update()
-    {
-        if (Input.touchCount != 0)
-        {
-        }
-    }
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("collided");

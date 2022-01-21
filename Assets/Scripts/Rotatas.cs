@@ -37,10 +37,15 @@ public class Rotatas : MonoBehaviour
             touch = Input.GetTouch(0);
             float x = touch.deltaPosition.x * rotationSpeed * Time.fixedDeltaTime;
             float y = touch.deltaPosition.y * rotationSpeed * Time.fixedDeltaTime;
-            Debug.Log(touch.deltaPosition);
+            
 
             rb.AddTorque(Vector3.down * x);
             rb.AddTorque(Vector3.right * y);
         }
+    }
+
+    public void BackToHub()
+    {
+        GameManager.Instance.UnloadSceneAsync("3D");
     }
 }

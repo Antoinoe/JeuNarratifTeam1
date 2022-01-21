@@ -51,7 +51,7 @@ public class Puzzle : MonoBehaviour
         if (hasPos && inRightPos)
         {
             piecePlaced.Invoke();
-            Debug.Log("event");
+            
         }
 
     }
