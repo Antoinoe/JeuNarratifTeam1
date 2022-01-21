@@ -12,20 +12,22 @@ public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] GameObject optionsObject;
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Animator OptionsMenuAnimator;
     bool areOptionsDisplayed = false;
     public void DisplayMenu()
     {
-        print("clicking");
         if (areOptionsDisplayed)
         {
             optionsObject.SetActive(false);
             areOptionsDisplayed = false;
+            
         }
         else
         {
             optionsObject.SetActive(true);
             areOptionsDisplayed = true;
         }
+        OptionsMenuAnimator.SetBool("isOpen", areOptionsDisplayed);
     }
     
     public void SetMusicVolume(float volume)
