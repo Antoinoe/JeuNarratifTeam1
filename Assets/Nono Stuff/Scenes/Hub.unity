@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c55675a52013a44ab2eb8280e98dc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputContent: {fileID: 1073284055}
-  outputName: {fileID: 1528882612}
-  outputSprite: {fileID: 1223803415}
+  _outputContent: {fileID: 0}
+  _outputName: {fileID: 0}
+  _outputSprite: {fileID: 0}
 --- !u!4 &31345706
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 31345705}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+        m_MethodName: NextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1945,6 +1945,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1222908884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222908885}
+  - component: {fileID: 1222908886}
+  m_Layer: 0
+  m_Name: TutoDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222908885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222908884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222908886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222908884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e607994bf81c07047b48462481ae7f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.05
+  sentence:
+  - npcName: Samantha
+    npcSprite: {fileID: 21300000, guid: 33f99bf4ae4d43c4ca640d27a672527e, type: 3}
+    sentence: Salut moi c'est Samantha!
+  - npcName: Michel
+    npcSprite: {fileID: 21300000, guid: 98a7cf254ec761a48abe754328a5f7be, type: 3}
+    sentence: Et moi c'est Michel!
+  - npcName: 
+    npcSprite: {fileID: 21300000, guid: 98a7cf254ec761a48abe754328a5f7be, type: 3}
+    sentence: Et moi c'est Michel!
 --- !u!1 &1223803413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,64 +2900,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528882610}
   m_CullTransparentMesh: 1
---- !u!1 &1534383635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1534383637}
-  - component: {fileID: 1534383636}
-  m_Layer: 0
-  m_Name: NPC2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1534383636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534383635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e607994bf81c07047b48462481ae7f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Gilbert
-  sprite: {fileID: 21300000, guid: 8d18c0af1b44fdd488726e4393b3e697, type: 3}
-  dialogue:
-  - dialogueDescription: 1er dialogue
-    sentences:
-    - eyo wassup c'est Gilbert
-    - Retourne voir ton pote!
-    nextNpcToTalk: {fileID: 2046493377}
-    nextDialogueIndexToShow: 1
-  - dialogueDescription: 1er dialogue
-    sentences:
-    - kestuveu?
-    - "men fou, t'fa\xE7on c'est fini la d\xE9mo"
-    nextNpcToTalk: {fileID: 0}
-    nextDialogueIndexToShow: 0
---- !u!4 &1534383637
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534383635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596761319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,68 +3946,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974875178}
   m_CullTransparentMesh: 1
---- !u!1 &2046493376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2046493378}
-  - component: {fileID: 2046493377}
-  m_Layer: 0
-  m_Name: NCP1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2046493377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046493376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e607994bf81c07047b48462481ae7f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Michel
-  sprite: {fileID: 21300000, guid: 33f99bf4ae4d43c4ca640d27a672527e, type: 3}
-  dialogue:
-  - dialogueDescription: 1er dialogue
-    sentences:
-    - Bonjour je m'appelle Michel, ceci est le premier dialogue
-    - "j'esp\xE8re que \xE7a va marcher!"
-    - Je vous retrouve au prochain dialogue
-    nextNpcToTalk: {fileID: 1534383636}
-    nextDialogueIndexToShow: 0
-  - dialogueDescription: second dialogue
-    sentences:
-    - "On se retrouve enfin pour le second dialogue, j'esp\xE8re que Gilbert vous
-      a pas emmerd\xE9..."
-    - "Si vous avez lu jusqu'ici c'est que \xE7a marche du feu de dieu"
-    - "Et j'ai rien d'autre \xE0 dire donc va me tuer 10 sangliers et plus vite que
-      \xE7a"
-    nextNpcToTalk: {fileID: 1534383636}
-    nextDialogueIndexToShow: 1
---- !u!4 &2046493378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046493376}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2062618381
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,7 +3958,6 @@ GameObject:
   - component: {fileID: 2062618386}
   - component: {fileID: 2062618385}
   - component: {fileID: 2062618384}
-  - component: {fileID: 2062618383}
   m_Layer: 5
   m_Name: test_dial
   m_TagString: Untagged
@@ -4052,25 +3985,6 @@ RectTransform:
   m_AnchoredPosition: {x: -47, y: -90}
   m_SizeDelta: {x: 160, y: 64.3468}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2062618383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062618381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e607994bf81c07047b48462481ae7f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  sprite: {fileID: 0}
-  dialogue:
-  - dialogueDescription: 
-    sentences: []
-    nextNpcToTalk: {fileID: 2046493377}
-    nextDialogueIndexToShow: 0
 --- !u!114 &2062618384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4115,10 +4029,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2062618383}
+      - m_Target: {fileID: 1222908886}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: TriggerDialogue
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
