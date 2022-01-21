@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Nono Stuff/WelcomeScene.unity
+    path: Assets/Nono Stuff/Scenes/WelcomeScene.unity
     guid: 198c07318ccd6f54fb250b84c10fe402
   - enabled: 1
-    path: Assets/Nono Stuff/Hub.unity
+    path: Assets/Nono Stuff/Scenes/Hub.unity
     guid: 51e1b680a46652e488ab34be1bfc0551
   m_configObjects: {}
