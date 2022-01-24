@@ -6,56 +6,66 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    Queue<string> sentences;
-    [SerializeField] Text outputContent, outputName;
-    [SerializeField] Image outputSprite;
-    DialogueTrigger _nextNpc;
-    int _nextNpcDialIndex;
-    void Start()
+    [SerializeField] Text _outputContent, _outputName;
+    [SerializeField] Image _outputSprite;
+
+    Sentence[] _sentences;
+    int _index;
+    float _textSpeed, _currentTextSpeed;
+    bool _isTextFullyDisplayed = false;
+    public void InitializeDialogue(Sentence[] sentences, float textSpeed)
     {
-        sentences = new Queue<string>();
+        //display dialogue box
+        _sentences = sentences;
+        _index = 0;
+        _textSpeed = textSpeed;
+        _currentTextSpeed = _textSpeed;
+        StartDialogue(_index);
+    }
+    public void StartDialogue(int index)
+    {
+        print("starting conversation with " + _sentences[index].npcName);
+        _outputName.text = _sentences[index].npcName;
+        _outputSprite.sprite = _sentences[index].npcSprite;
+        StartCoroutine(DisplayText(_sentences[index].sentence));
     }
 
-    public void StartDialogue(DialogueTrigger npc, int dialogueNbr)
+    public void NextSentence()
     {
-        _nextNpc = npc.dialogue[dialogueNbr].nextNpcToTalk;
-        _nextNpcDialIndex = npc.dialogue[dialogueNbr].nextDialogueIndexToShow;
-        outputSprite.sprite = npc.sprite;
-
-        Debug.Log("starting conversation with " + npc.name);
-        outputName.text = npc.name;
-        sentences.Clear();
-        foreach(string sentence in npc.dialogue[dialogueNbr].sentences)
+        if (_isTextFullyDisplayed)
         {
-            sentences.Enqueue(sentence);
-        }
-        DisplayNextSentence();
-        
-    }
-
-    public void DisplayNextSentence()
-    {
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-        string sentence = sentences.Dequeue();
-        print(sentence);
-        outputContent.text = sentence;
-        
-    }
-
-    private void EndDialogue()
-    {
-        if(_nextNpc == null)
-        {
-            print("!!!end of conversation!!!");
-            // quitte le dialogue
+            if (_index >= _sentences.Length - 1)
+            {
+                EndConversation();
+                return;
+            }
+            _index += 1;
+            StartDialogue(_index);
         }
         else
         {
-            StartDialogue(_nextNpc, _nextNpcDialIndex);
+            _currentTextSpeed = 0;
+            print("speeding process");
         }
+        
+    }
+
+    private void EndConversation()
+    {
+        print("conversation has ended");
+        //close dialogue box
+    }
+
+    IEnumerator DisplayText(string text)
+    {
+        _isTextFullyDisplayed = false;
+        _outputContent.text = "";
+        foreach (char letter in text.ToCharArray())
+        {
+            yield return new WaitForSeconds(_currentTextSpeed);
+            _outputContent.text += letter;
+        }
+        _isTextFullyDisplayed = true;
+        _currentTextSpeed = _textSpeed;
     }
 }
