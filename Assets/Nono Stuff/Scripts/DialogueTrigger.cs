@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public string name;
-    public Sprite sprite;
-    public Dialogue[] dialogue;
+    /*    public string name;
+        public Sprite sprite;
+        public Dialogue[] dialogue;
+        */
+    public float textSpeed;
+    public Sentence[] sentence;
     
-    public void TriggerDialogue( int index)
+    public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(this, index);
+        //print(sentence[0].npcName);
+        FindObjectOfType<DialogueManager>().InitializeDialogue(sentence, textSpeed);
     }
 }
