@@ -8,6 +8,7 @@ public class Sentence
 {
     public string npcName;
     public Sprite npcSprite;
-    [TextArea(2, 10)] public string sentence;
+    public string locKey; //clé csv à récupérer depuis le TextLocaliserUI
+    [TextArea(2, 10)] public string sentence;// endroit à indiquer pour changer la langue
     
 }
