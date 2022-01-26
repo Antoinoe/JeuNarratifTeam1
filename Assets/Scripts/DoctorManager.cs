@@ -4,45 +4,35 @@ using UnityEngine;
 
 public class DoctorManager : MonoBehaviour
 {
-    [SerializeField] GameTimeline timeline;
-    [System.Serializable]
-    class ExpertDialogues
-    {
-        public string name;
-        int _indexToUnlock;
-        public int indexToUnlock
-        {
-            get { return _indexToUnlock; }
-            set { _indexToUnlock = value; }
-        }
-    }
-    [SerializeField] List<ExpertDialogues> allDialogues;
+    [SerializeField] List<int> indexToUnlock;
+    [SerializeField] List<DialogueTrigger> allDialogues;
+    bool dialoguetriggered;
+    [SerializeField] bool isDoctor = false;
 
     private void Start()
     {
-        for(int i = 0; i < allDialogues.Count; i++)
-        {
-            foreach (GameTimeline.interactable item in timeline.timeline)
-            {
-                if (item.name == allDialogues[i].name)
-                {
-                    allDialogues[i].indexToUnlock = item.indexToUnlock;
-                }
-                    
-            }
-        }
+        DialogueManager.Instance.EndOfDialogue.AddListener(NextStage);
     }
-
     public void CheckDialogues()
     {
         int currentStage = PlayerPrefs.GetInt("PlayerStage");
 
-        foreach (ExpertDialogues item in allDialogues)
+        for (int i = 0; i < allDialogues.Count; i++)
         {
-            if(item.indexToUnlock == currentStage) // change to always have the option to see this dialoque again
+            if (indexToUnlock[i] == currentStage) // change to always have the option to see this dialoque again
             {
-                DialogueManager.Instance.StartDialogue(currentStage);
+                allDialogues[i].TriggerDialogue();
+                if(isDoctor)
+                    dialoguetriggered = true;
             }
+        }
+    }
+
+    private void NextStage()
+    {
+        if (dialoguetriggered)
+        {
+            GameManager.Instance.NextStage();
         }
     }
 }

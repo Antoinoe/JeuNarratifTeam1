@@ -8,13 +8,13 @@ public class Rotatas : MonoBehaviour
     bool dragging = false;
     Rigidbody rb;
     Touch touch;
-    [SerializeField] DialogueTrigger dialogue = null;
+    [SerializeField] List<DialogueTrigger> dialogue = null;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         if (dialogue != null)
-            dialogue.TriggerDialogue();
+            dialogue[0].TriggerDialogue();
     }
 
 
@@ -47,10 +47,10 @@ public class Rotatas : MonoBehaviour
         }
     }
 
-    public void BackToHub()
+    public void BackToHub(string sceneToUnload)
     {
 
-        GameManager.Instance.NextStage();
-        GameManager.Instance.UnloadSceneAsync("3D");
+        //GameManager.Instance.NextStage();
+        GameManager.Instance.UnloadSceneAsync(sceneToUnload);
     }
 }

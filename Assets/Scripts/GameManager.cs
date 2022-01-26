@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     [SerializeField] GameObject hub;
+    public bool returnTohubWithNextStag = false;
 
     int currentDialogue = 0;
 
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _instance = this;
-        //currentStage = PlayerPrefs.GetInt("PlayerStage");
+        currentStage = PlayerPrefs.GetInt("PlayerStage");
         //currentDialogue = PlayerPrefs.GetInt("DialogueStage");
         //DialogueManager.Instance.EndOfDialogue.AddListener(NextStage);
 
@@ -46,7 +47,13 @@ public class GameManager : MonoBehaviour
     
     public void UnloadSceneAsync(string sceneName)
     {
+        if (returnTohubWithNextStag)
+        {
+            returnTohubWithNextStag = false;
+            NextStage();
+        }
         hub.SetActive(true);
+
         SceneManager.UnloadSceneAsync(sceneName);
     }
     
@@ -62,7 +69,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("PlayerStage", currentStage);
         PlayerPrefs.Save();
         
-        timeline[currentStage].dialogue.TriggerDialogue();
+        if(timeline.Count >= currentStage && timeline[currentStage].dialogue != null )
+            timeline[currentStage].dialogue.TriggerDialogue();
         
     }
 }

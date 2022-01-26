@@ -41,11 +41,11 @@ public class PuzzleManager : MonoBehaviour
 
     public void ReturnToHub()
     {
-        GameManager.Instance.NextStage();
-        GameManager.Instance.UnloadSceneAsync("PuzzleMinigame");
+        GameManager.Instance.UnloadSceneAsync(sceneToUnload);
     }
     public void Goto3dView(string sceneToLoad)
     {
+        GameManager.Instance.returnTohubWithNextStag = true;
         GameManager.Instance.LoadAndUnloadSceneAsync( sceneToLoad,sceneToUnload);
     }
 }
