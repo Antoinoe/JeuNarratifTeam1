@@ -7,6 +7,8 @@ public class PuzzleManager : MonoBehaviour
 {
     public GameObject puzzleFinished;
     [SerializeField] Puzzle[] puzzlePieces;
+    [SerializeField] string sceneToUnload;
+    public int artifactNum;
 
     private void Start()
     {
@@ -31,13 +33,19 @@ public class PuzzleManager : MonoBehaviour
         if (puzzleDone)
         {
             puzzleFinished.SetActive(true);
-            GameManager.Instance.NextStage();
+            PlayerPrefs.SetInt("Artifact" + artifactNum, 1);
+            //GameManager.Instance.NextStage();
             Debug.Log("puzzle finished");
         }
     }
 
     public void ReturnToHub()
     {
+        GameManager.Instance.NextStage();
         GameManager.Instance.UnloadSceneAsync("PuzzleMinigame");
+    }
+    public void Goto3dView(string sceneToLoad)
+    {
+        GameManager.Instance.LoadAndUnloadSceneAsync( sceneToLoad,sceneToUnload);
     }
 }

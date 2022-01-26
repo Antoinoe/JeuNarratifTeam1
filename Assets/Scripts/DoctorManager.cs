@@ -41,7 +41,7 @@ public class DoctorManager : MonoBehaviour
         {
             if(item.indexToUnlock == currentStage) // change to always have the option to see this dialoque again
             {
-                DialogueManager.Instance.StartDialogue(GameObject.FindObjectOfType<DialogueTrigger>(), currentStage);
+                DialogueManager.Instance.StartDialogue(currentStage);
             }
         }
     }

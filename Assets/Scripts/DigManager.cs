@@ -9,26 +9,32 @@ public class DigManager : MonoBehaviour
     [SerializeField] int numberOfArtifacts;
     int currentNumOfArtifacts = 0;
     [SerializeField] GameObject finishCanvas;
+    [SerializeField] List<DialogueTrigger> dialogue = null;
 
     private void Awake()
     {
         _instance = this;
         currentNumOfArtifacts = 0;
+        if (dialogue != null)
+            dialogue[0].TriggerDialogue();
     }
 
     public void ArtifactFound()
     {
         currentNumOfArtifacts++;
+        if (dialogue.Count > currentNumOfArtifacts)
+            dialogue[currentNumOfArtifacts].TriggerDialogue();
         if (currentNumOfArtifacts == numberOfArtifacts)
         {
             Debug.Log("all artifacts found");
             finishCanvas.SetActive(true);
-            GameManager.Instance.NextStage();
+            //
         }
     }
 
     public void ReturnToHub(string sceneName)
     {
+        GameManager.Instance.NextStage();
         GameManager.Instance.UnloadSceneAsync(sceneName);
     }
 }

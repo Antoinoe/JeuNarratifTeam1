@@ -11,6 +11,7 @@ public class GameTimeline : ScriptableObject
         public string name;
         public string description;
         public int indexToUnlock;
+        public bool hasDialogue;
 
     }
 

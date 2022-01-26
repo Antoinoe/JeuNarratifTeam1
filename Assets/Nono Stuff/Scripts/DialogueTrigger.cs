@@ -15,6 +15,6 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         //print(sentence[0].npcName);
-        FindObjectOfType<DialogueManager>().InitializeDialogue(sentence, textSpeed);
+        DialogueManager.Instance.InitializeDialogue(sentence, textSpeed);
     }
 }

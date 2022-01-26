@@ -5,22 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [System.Serializable]
+    public struct interactable
+    {
+        public string name;
+        public string description;
+        public DialogueTrigger dialogue;
+    }
+
     public static GameManager Instance { get { return _instance; } }
     private static GameManager _instance;
 
     [SerializeField] GameObject hub;
 
-    int currentStage;
+    int currentDialogue = 0;
+
+    public int currentStage = 0;
+    [SerializeField] List<interactable> timeline;
 
     private void Start()
     {
         _instance = this;
-        currentStage = PlayerPrefs.GetInt("PlayerStage");
-        DialogueManager.Instance.EndOfDialogue.AddListener(NextStage);
+        //currentStage = PlayerPrefs.GetInt("PlayerStage");
+        //currentDialogue = PlayerPrefs.GetInt("DialogueStage");
+        //DialogueManager.Instance.EndOfDialogue.AddListener(NextStage);
 
         if (currentStage == 0)
         {
-            DialogueManager.Instance.StartDialogue(GameObject.FindObjectOfType<DialogueTrigger>(), 0);
+            timeline[0].dialogue.TriggerDialogue();
+            PlayerPrefs.SetInt("DialogueStage", currentDialogue);
             Debug.Log("tuto");
         }
     }
@@ -36,12 +49,20 @@ public class GameManager : MonoBehaviour
         hub.SetActive(true);
         SceneManager.UnloadSceneAsync(sceneName);
     }
+    
+    public void LoadAndUnloadSceneAsync(string sceneNameToLoad, string sceneNameToUnload)
+    {
+        SceneManager.UnloadSceneAsync(sceneNameToUnload);
+        SceneManager.LoadSceneAsync(sceneNameToLoad, LoadSceneMode.Additive);
+    }
 
     public void NextStage()
     {
         currentStage++;
-        Debug.Log(currentStage);
         PlayerPrefs.SetInt("PlayerStage", currentStage);
         PlayerPrefs.Save();
+        
+        timeline[currentStage].dialogue.TriggerDialogue();
+        
     }
 }

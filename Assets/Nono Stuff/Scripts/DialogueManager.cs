@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get { return _instance; } }
+    private static DialogueManager _instance;
+
+    [SerializeField] GameObject outputCanvas;
     [SerializeField] Text _outputContent, _outputName;
     [SerializeField] Image _outputSprite;
 
@@ -13,6 +18,13 @@ public class DialogueManager : MonoBehaviour
     int _index;
     float _textSpeed, _currentTextSpeed;
     bool _isTextFullyDisplayed = false;
+
+    public UnityEvent EndOfDialogue;
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     public void InitializeDialogue(Sentence[] sentences, float textSpeed)
     {
         //display dialogue box
@@ -24,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(int index)
     {
+        outputCanvas.SetActive(true);
         print("starting conversation with " + _sentences[index].npcName);
         _outputName.text = _sentences[index].npcName;
         _outputSprite.sprite = _sentences[index].npcSprite;
@@ -53,6 +66,8 @@ public class DialogueManager : MonoBehaviour
     private void EndConversation()
     {
         print("conversation has ended");
+        EndOfDialogue.Invoke();
+        outputCanvas.SetActive(false);
         //close dialogue box
     }
 
