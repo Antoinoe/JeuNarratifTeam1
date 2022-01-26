@@ -156,6 +156,8 @@ MonoBehaviour:
   _outputContent: {fileID: 1073284055}
   _outputName: {fileID: 1528882612}
   _outputSprite: {fileID: 1223803415}
+  _index: 0
+  currentlyTalking: 0
   EndOfDialogue:
     m_PersistentCalls:
       m_Calls: []
@@ -792,15 +794,18 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "J'aimerais retourner \xE0 ta place pour red\xE9couvrir la sensation
       du premier fossile trouv\xE9 !"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: " l\u2019arch\xE9ologie peut nous permettre de retrouver les vestiges
       d\u2019une civilisation pass\xE9e, de sa naissance jusqu'\xE0 sa destruction
       et c\u2019est ce qui fait la magie de notre art."
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
+    locKey: 
     sentence: "Tsss\u2026 Tu connais la chance du d\xE9butant ? Ne prend pas trop
       la confiance, tu n\u2019en as trouv\xE9 qu\u2019un seul."
 --- !u!1 &309352894
@@ -1031,6 +1036,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319856121}
   m_CullTransparentMesh: 1
+--- !u!1 &376847269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376847270}
+  - component: {fileID: 376847271}
+  m_Layer: 0
+  m_Name: LocalisationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376847270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376847269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376847271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376847269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26b85a49db54bf4d9954f95648c44ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &420006653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1267,7 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Bravo ! Tu as r\xE9ussi \xE0 trouver ton premier fossile. Examinons
       le, pour comprendre l\u2019origine du fossile."
 --- !u!1 &464019046
@@ -1268,18 +1317,22 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Nous devrions faire attention avec ces artefacts, il y a quelque chose
       de bizarre avec tout \xE7a."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Essayons de rassembler toutes les informations que nous avons pour
       comprendre ce qu\u2019il s\u2019est pass\xE9."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Les chiffres vont peut-\xEAtre nous aider \xE0 acc\xE9der \xE0 la
       pi\xE8ce derri\xE8re la porte que nous avions trouv\xE9 la semaine derni\xE8re.\r\n"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Les secousses sont de plus en plus fortes, je ne suis pas rassur\xE9."
 --- !u!1 &483376826
 GameObject:
@@ -1986,18 +2039,22 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Ouvrons cette porte, ton p\xE8re ne doit pas s\u2019\xEAtre sacrifi\xE9
       pour rien. "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: " J\u2019ai besoin de savoir ce qu\u2019il se cache derri\xE8re cette
       porte, j\u2019y ai consacr\xE9 ma vie enti\xE8re.\r"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Peu importe ce que cela peut me co\xFBter, je veux ouvrir cette porte!\r\nD\xE9p\xEAchons
       nous.\r"
   - npcName: Brandon
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
+    locKey: 
     sentence: "Qu\u2019est ce qui se passe ? Professeur calmez-vous. Les secousses
       sont de plus en plus violentes, ne devrions-nous pas plut\xF4t sortir d\u2019ici
       ?"
@@ -2713,6 +2770,7 @@ MonoBehaviour:
   sentence:
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
+    locKey: 
     sentence: "S\xFBrement seront-ils inutiles pour nous mais au contraire pour des
       vendeurs \xE0 gages ils seront tr\xE8s utiles\u2026"
 --- !u!1 &1025792215
@@ -2881,6 +2939,7 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: " Examinons le de plus pr\xE8s, pour d\xE9celer les secrets qu\u2019il
       renferme."
 --- !u!4 &1032267917
@@ -2967,9 +3026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pour l'instant le text est pas ou mais \xE7a devrait passer pour les tests
-    en cours... J'aimerais bien que Farm3 me r\xE9ponde j'aimerais bien commencer
-    mon stage genre lundi comme pr\xE9vu..."
+  m_Text: 
 --- !u!222 &1073284056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3190,7 +3247,7 @@ RectTransform:
   m_Children:
   - {fileID: 1596761320}
   m_Father: {fileID: 1797619965}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3244,17 +3301,21 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 0001
     sentence: "Bonjour \xE0 toi, je suis le Professeur Hans Gregorief."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 0002
     sentence: " J\u2019esp\xE8re que tu es pr\xEAt pour ta premi\xE8re journ\xE9e,
       nous avons du pain sur la planche."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 0003
     sentence: "Ton p\xE8re m\u2019a beaucoup parl\xE9 de toi, quand il travaillait
       avec moi avant de\u2026 enfin bref."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Allons au site d'excavation \xE0 gauche."
 --- !u!1 &1223803413
 GameObject:
@@ -3378,20 +3439,24 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Tant de questions, et si peu de r\xE9ponses\u2026 \xC0 quelles civilisations 
       appartiennent tous ces art\xE9facts ? "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Pourquoi autant de myst\xE8res entoure toutes ces d\xE9couvertes et
       surtout pourquoi, on dirait qu\u2019il ont comme qui dirait \xE9t\xE9 \xE9cras\xE9
       sur le sol ?"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Comme s' il \xE9tait tomb\xE9 de haut ? Avec la topologie actuelle,
       ce n\u2019est pas possible\u2026\r\nQuelles sont ces secousses que je ressens
       ?\r"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Ne perdons pas de temps, c\u2019est parti pour la 3\xE8me excavation.
       Je sens que nous allons trouver plus de r\xE9ponses \xE0 toutes nos questions."
 --- !u!1 &1244530874
@@ -3646,6 +3711,7 @@ MonoBehaviour:
   sentence:
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
+    locKey: 
     sentence: Ne prends pas trop vite la confiance, il pourrait se passer des choses
       inattendues.
 --- !u!1 &1406674752
@@ -4378,10 +4444,12 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: "Il semblerait que nous pouvons former quelque chose d\u2019encore
       plus grand en assemblant toutes ces pi\xE8ces ! "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 
     sentence: Rdv a la table pour l'assemblage!
 --- !u!1 &1573146081
 GameObject:
@@ -5262,8 +5330,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1872801735}
   - {fileID: 1222123834}
+  - {fileID: 1872801735}
   m_Father: {fileID: 1909650096}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5338,7 +5406,7 @@ RectTransform:
   - {fileID: 309352895}
   - {fileID: 319856122}
   m_Father: {fileID: 1797619965}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5870,7 +5938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954664245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 376847271}
+        m_TargetAssemblyTypeName: LocalisationManager, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: fr
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954664245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6121,7 +6201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2125377673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 376847271}
+        m_TargetAssemblyTypeName: LocalisationManager, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: en
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2125377673
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class LocalisationManager : MonoBehaviour
     public static string GetLocalisedValue(string key)
     {
         if (!isInit) { Init(); }
-        string value = key;
+        string value = "";
         switch (language)
         {
             case Language.English:
@@ -43,5 +43,24 @@ public class LocalisationManager : MonoBehaviour
         }
  
         return value;
+    }
+
+    public void ChangeLanguage(string setLanguage)
+    {
+        if(setLanguage == "en")
+        {
+            language = Language.English;
+
+        }
+        else if(setLanguage == "fr")
+        {
+            language = Language.French;
+
+        }
+        DialogueManager DM = DialogueManager.Instance;
+        if (DM.currentlyTalking)
+        {
+            DM.StartDialogue(DM._index);
+        }
     }
 }

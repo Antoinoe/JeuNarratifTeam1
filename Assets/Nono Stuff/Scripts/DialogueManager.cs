@@ -15,9 +15,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Image _outputSprite;
 
     Sentence[] _sentences;
-    int _index;
+    public int _index;
     float _textSpeed, _currentTextSpeed;
     bool _isTextFullyDisplayed = false;
+
+    public bool currentlyTalking = false;
 
     public UnityEvent EndOfDialogue;
     private void Awake()
@@ -36,11 +38,12 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(int index)
     {
+        currentlyTalking = true;
         outputCanvas.SetActive(true);
-        print("starting conversation with " + _sentences[index].npcName);
+        //print("starting conversation with " + _sentences[index].npcName);
         _outputName.text = _sentences[index].npcName;
         _outputSprite.sprite = _sentences[index].npcSprite;
-        StartCoroutine(DisplayText(_sentences[index].sentence));
+        StartCoroutine(DisplayText(LocalisationManager.GetLocalisedValue(_sentences[index].locKey)));
     }
 
     public void NextSentence()
@@ -65,6 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndConversation()
     {
+        currentlyTalking = false;
         print("conversation has ended");
         EndOfDialogue.Invoke();
         outputCanvas.SetActive(false);
