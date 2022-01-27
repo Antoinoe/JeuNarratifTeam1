@@ -13,7 +13,7 @@ public class Rotatas : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (dialogue != null)
+        if (dialogue[0] != null)
             dialogue[0].TriggerDialogue();
     }
 

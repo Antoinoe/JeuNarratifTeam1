@@ -985,11 +985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a17c2fbc2ad9c4dbefd84e721f8acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageToUnlock: 010000000300000006000000
+  stageToUnlock: 0100000003000000060000000a000000
   artifactsToUnlock:
   - {fileID: 842108122}
   - {fileID: 853658518}
   - {fileID: 751388885}
+  - {fileID: 1187111487}
 --- !u!1 &1181263436
 GameObject:
   m_ObjectHideFlags: 0

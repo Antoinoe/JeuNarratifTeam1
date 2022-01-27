@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  dialogue: []
+  dialogue:
+  - {fileID: 0}
 --- !u!65 &383148775
 BoxCollider:
   m_ObjectHideFlags: 0

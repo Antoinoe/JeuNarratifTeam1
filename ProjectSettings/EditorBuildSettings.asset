@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Table.unity
     guid: 824bb0475f2e4ac4a99a5733d4814bb0
   - enabled: 1
+    path: Assets/Scenes/Door.unity
+    guid: b85104c56faf6474e8066a7042c44a9e
+  - enabled: 1
     path: Assets/Scenes/Digsites/DigSiteTuto.unity
     guid: 403eef9f4f51ecf4a9d943086bc9c544
   - enabled: 1

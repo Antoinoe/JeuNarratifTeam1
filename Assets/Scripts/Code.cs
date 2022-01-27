@@ -13,10 +13,12 @@ public class Code : MonoBehaviour
 
     private int n1 = 0, n2 = 0, n3 = 0, n4 = 0, n5 = 0;
 
+    public GameObject endScreen;
+
     void Update()
     {
         if (n1 == 4 && n2 == 1 && n3 == 8 && n4 == 7 && n5 == 3)
-            Debug.Log("you win");
+            endScreen.SetActive(true);
     }
 
     public void but1()

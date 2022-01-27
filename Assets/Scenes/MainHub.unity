@@ -579,6 +579,9 @@ MonoBehaviour:
   - name: forth puzle
     description: 
     dialogue: {fileID: 0}
+  - name: inspect
+    description: 
+    dialogue: {fileID: 0}
   - name: End door
     description: 
     dialogue: {fileID: 749211268}
@@ -1404,7 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea65507152e6724e935a7ddf203f28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterAtStage: 9
+  enterAtStage: 11
 --- !u!1 &542905783
 GameObject:
   m_ObjectHideFlags: 0
