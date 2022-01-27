@@ -37,7 +37,7 @@ public class Puzzle : MonoBehaviour
 
     private void OnMouseDown()
     {
-        transform.localScale = new Vector3(1, 1, 1);
+        //transform.localScale = new Vector3(1, 1, 1);
         followFinger = true;
         theTouch = Input.GetTouch(0);
         fingerOffset = transform.position - (Camera.main.ScreenToWorldPoint(theTouch.position) + new Vector3(0, 0, 10));
@@ -47,7 +47,7 @@ public class Puzzle : MonoBehaviour
     {
         followFinger = false;
         transform.position = snapPosition;
-        transform.localScale = hasPos ? new Vector3(1, 1, 1) : originalScale;
+        //transform.localScale = hasPos ? originalPos  : originalScale;
         if (hasPos && inRightPos)
         {
             piecePlaced.Invoke();

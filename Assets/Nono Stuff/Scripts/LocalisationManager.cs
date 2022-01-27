@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LocalisationManager : MonoBehaviour
 {
+    public static LocalisationManager Instance { get { return _instance; } }
+    private static LocalisationManager _instance;
+    public UnityEvent languageChanged;
+
+    
     public enum Language
     {
         English,
@@ -45,6 +51,11 @@ public class LocalisationManager : MonoBehaviour
         return value;
     }
 
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     public void ChangeLanguage(string setLanguage)
     {
         if(setLanguage == "en")
@@ -62,5 +73,6 @@ public class LocalisationManager : MonoBehaviour
         {
             DM.StartDialogue(DM._index);
         }
+        languageChanged.Invoke();
     }
 }

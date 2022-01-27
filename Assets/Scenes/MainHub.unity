@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -401,7 +401,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 22.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149822149
 MonoBehaviour:
@@ -423,8 +423,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0976d63fb3bad9d45bc9044d8b939937, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -573,7 +573,10 @@ MonoBehaviour:
   - name: third excavation
     description: 
     dialogue: {fileID: 0}
-  - name: third excavation
+  - name: forth excavation
+    description: 
+    dialogue: {fileID: 0}
+  - name: forth puzle
     description: 
     dialogue: {fileID: 0}
   - name: End door
@@ -604,6 +607,7 @@ GameObject:
   - component: {fileID: 262767756}
   - component: {fileID: 262767758}
   - component: {fileID: 262767757}
+  - component: {fileID: 262767759}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -643,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -651,11 +655,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -663,7 +667,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREDITS
+  m_Text: Credits
 --- !u!222 &262767758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -672,6 +676,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262767755}
   m_CullTransparentMesh: 1
+--- !u!114 &262767759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262767755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &276318610
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,18 +811,18 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0013
     sentence: "J'aimerais retourner \xE0 ta place pour red\xE9couvrir la sensation
       du premier fossile trouv\xE9 !"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0014
     sentence: " l\u2019arch\xE9ologie peut nous permettre de retrouver les vestiges
       d\u2019une civilisation pass\xE9e, de sa naissance jusqu'\xE0 sa destruction
       et c\u2019est ce qui fait la magie de notre art."
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
-    locKey: 
+    locKey: 0015
     sentence: "Tsss\u2026 Tu connais la chance du d\xE9butant ? Ne prend pas trop
       la confiance, tu n\u2019en as trouv\xE9 qu\u2019un seul."
 --- !u!1 &309352894
@@ -1079,6 +1096,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b85a49db54bf4d9954f95648c44ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  languageChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &420006653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1200,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 65, y: -20}
+  m_SizeDelta: {x: 85.8695, y: 0.8695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &442275595
 MonoBehaviour:
@@ -1202,9 +1222,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 20d6a80b963279a409d99dbaaaa41e2b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1267,7 +1287,7 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0009
     sentence: "Bravo ! Tu as r\xE9ussi \xE0 trouver ton premier fossile. Examinons
       le, pour comprendre l\u2019origine du fossile."
 --- !u!1 &464019046
@@ -1317,22 +1337,22 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0034
     sentence: "Nous devrions faire attention avec ces artefacts, il y a quelque chose
       de bizarre avec tout \xE7a."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0035
     sentence: "Essayons de rassembler toutes les informations que nous avons pour
       comprendre ce qu\u2019il s\u2019est pass\xE9."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0036
     sentence: "Les chiffres vont peut-\xEAtre nous aider \xE0 acc\xE9der \xE0 la
       pi\xE8ce derri\xE8re la porte que nous avions trouv\xE9 la semaine derni\xE8re.\r\n"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0037
     sentence: "Les secousses sont de plus en plus fortes, je ne suis pas rassur\xE9."
 --- !u!1 &483376826
 GameObject:
@@ -1563,6 +1583,7 @@ GameObject:
   - component: {fileID: 612782094}
   - component: {fileID: 612782096}
   - component: {fileID: 612782095}
+  - component: {fileID: 612782097}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1610,11 +1631,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 54
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 61
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1631,6 +1652,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612782093}
   m_CullTransparentMesh: 1
+--- !u!114 &612782097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612782093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 1004
 --- !u!1 &656530035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,22 +2073,22 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0039
     sentence: "Ouvrons cette porte, ton p\xE8re ne doit pas s\u2019\xEAtre sacrifi\xE9
       pour rien. "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0040
     sentence: " J\u2019ai besoin de savoir ce qu\u2019il se cache derri\xE8re cette
       porte, j\u2019y ai consacr\xE9 ma vie enti\xE8re.\r"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0041
     sentence: "Peu importe ce que cela peut me co\xFBter, je veux ouvrir cette porte!\r\nD\xE9p\xEAchons
       nous.\r"
   - npcName: Brandon
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
-    locKey: 
+    locKey: 0042
     sentence: "Qu\u2019est ce qui se passe ? Professeur calmez-vous. Les secousses
       sont de plus en plus violentes, ne devrions-nous pas plut\xF4t sortir d\u2019ici
       ?"
@@ -2120,6 +2154,7 @@ GameObject:
   - component: {fileID: 792630735}
   - component: {fileID: 792630737}
   - component: {fileID: 792630736}
+  - component: {fileID: 792630738}
   m_Layer: 5
   m_Name: T_Musique
   m_TagString: Untagged
@@ -2143,8 +2178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112, y: 182}
-  m_SizeDelta: {x: 160, y: 45.677}
+  m_AnchoredPosition: {x: -72.981, y: 177}
+  m_SizeDelta: {x: 234.0377, y: 66.3388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792630736
 MonoBehaviour:
@@ -2159,7 +2194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2167,19 +2202,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 46
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MUSIQUE
+  m_Text: Musique
 --- !u!222 &792630737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2188,6 +2223,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792630734}
   m_CullTransparentMesh: 1
+--- !u!114 &792630738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792630734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 1002
 --- !u!1 &818348850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,7 +2731,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 65, y: -20}
+  m_SizeDelta: {x: 85.8695, y: -6.3269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998090860
 MonoBehaviour:
@@ -2705,9 +2753,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 20d6a80b963279a409d99dbaaaa41e2b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2770,7 +2818,7 @@ MonoBehaviour:
   sentence:
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
-    locKey: 
+    locKey: 0038
     sentence: "S\xFBrement seront-ils inutiles pour nous mais au contraire pour des
       vendeurs \xE0 gages ils seront tr\xE8s utiles\u2026"
 --- !u!1 &1025792215
@@ -2939,7 +2987,7 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0019
     sentence: " Examinons le de plus pr\xE8s, pour d\xE9celer les secrets qu\u2019il
       renferme."
 --- !u!4 &1032267917
@@ -3014,11 +3062,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 53
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -3233,7 +3281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1222123834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3315,7 +3363,7 @@ MonoBehaviour:
       avec moi avant de\u2026 enfin bref."
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0004
     sentence: "Allons au site d'excavation \xE0 gauche."
 --- !u!1 &1223803413
 GameObject:
@@ -3439,24 +3487,29 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0023
     sentence: "Tant de questions, et si peu de r\xE9ponses\u2026 \xC0 quelles civilisations 
       appartiennent tous ces art\xE9facts ? "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0024
     sentence: "Pourquoi autant de myst\xE8res entoure toutes ces d\xE9couvertes et
       surtout pourquoi, on dirait qu\u2019il ont comme qui dirait \xE9t\xE9 \xE9cras\xE9
       sur le sol ?"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0025
     sentence: "Comme s' il \xE9tait tomb\xE9 de haut ? Avec la topologie actuelle,
       ce n\u2019est pas possible\u2026\r\nQuelles sont ces secousses que je ressens
       ?\r"
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0026
+    sentence: "Ne perdons pas de temps, c\u2019est parti pour la 3\xE8me excavation.
+      Je sens que nous allons trouver plus de r\xE9ponses \xE0 toutes nos questions."
+  - npcName: Dr Hans G.
+    npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
+    locKey: 0027
     sentence: "Ne perdons pas de temps, c\u2019est parti pour la 3\xE8me excavation.
       Je sens que nous allons trouver plus de r\xE9ponses \xE0 toutes nos questions."
 --- !u!1 &1244530874
@@ -3494,7 +3547,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 22.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244530876
 MonoBehaviour:
@@ -3516,8 +3569,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0976d63fb3bad9d45bc9044d8b939937, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3635,7 +3688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3643,7 +3696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
@@ -3711,7 +3764,7 @@ MonoBehaviour:
   sentence:
   - npcName: Brandon J.
     npcSprite: {fileID: 21300000, guid: f03f564a890773f41baf1500a70921da, type: 3}
-    locKey: 
+    locKey: 0028
     sentence: Ne prends pas trop vite la confiance, il pourrait se passer des choses
       inattendues.
 --- !u!1 &1406674752
@@ -4001,6 +4054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462162889}
   - component: {fileID: 1462162891}
+  - component: {fileID: 1462162892}
   - component: {fileID: 1462162890}
   m_Layer: 5
   m_Name: T_Settings
@@ -4025,8 +4079,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 359}
-  m_SizeDelta: {x: 250, y: 120}
+  m_AnchoredPosition: {x: -59.439, y: 359}
+  m_SizeDelta: {x: 291.1221, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462162890
 MonoBehaviour:
@@ -4041,7 +4095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4049,8 +4103,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 49
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -4070,6 +4124,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462162888}
   m_CullTransparentMesh: 1
+--- !u!114 &1462162892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462162888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 1001
 --- !u!1 &1483583944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,12 +4443,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 44
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 43
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 44
+    m_MaxSize: 66
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4444,12 +4511,12 @@ MonoBehaviour:
   sentence:
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0007
     sentence: "Il semblerait que nous pouvons former quelque chose d\u2019encore
       plus grand en assemblant toutes ces pi\xE8ces ! "
   - npcName: Dr Hans G.
     npcSprite: {fileID: 21300000, guid: 346246fe7a8d99b48b1f1f28e0762978, type: 3}
-    locKey: 
+    locKey: 0008
     sentence: Rdv a la table pour l'assemblage!
 --- !u!1 &1573146081
 GameObject:
@@ -5027,6 +5094,7 @@ GameObject:
   - component: {fileID: 1696287709}
   - component: {fileID: 1696287711}
   - component: {fileID: 1696287710}
+  - component: {fileID: 1696287712}
   m_Layer: 5
   m_Name: T_Effets
   m_TagString: Untagged
@@ -5050,8 +5118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112, y: 6}
-  m_SizeDelta: {x: 160, y: 45.677}
+  m_AnchoredPosition: {x: -44.571, y: -0.000020981}
+  m_SizeDelta: {x: 290.8577, y: 66.838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696287710
 MonoBehaviour:
@@ -5066,7 +5134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5074,8 +5142,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -5095,6 +5163,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696287708}
   m_CullTransparentMesh: 1
+--- !u!114 &1696287712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696287708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 1003
 --- !u!1 &1696772204
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,7 +5795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5722,7 +5803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
@@ -6000,6 +6081,7 @@ GameObject:
   - component: {fileID: 1974875179}
   - component: {fileID: 1974875181}
   - component: {fileID: 1974875180}
+  - component: {fileID: 1974875182}
   m_Layer: 5
   m_Name: T_Langage
   m_TagString: Untagged
@@ -6023,8 +6105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112, y: 32.83844}
-  m_SizeDelta: {x: 160, y: 45.677}
+  m_AnchoredPosition: {x: -71.000015, y: 41.447502}
+  m_SizeDelta: {x: 242, y: 62.8951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974875180
 MonoBehaviour:
@@ -6039,7 +6121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6047,8 +6129,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 55f0961fca17ded4ab98ed6222b1014c, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -6068,6 +6150,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974875178}
   m_CullTransparentMesh: 1
+--- !u!114 &1974875182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974875178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f387d9f7f1699418f1b68cb048731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &2062997865
 GameObject:
   m_ObjectHideFlags: 0

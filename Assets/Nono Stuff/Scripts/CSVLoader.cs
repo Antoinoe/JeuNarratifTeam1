@@ -42,7 +42,7 @@ public class CSVLoader : MonoBehaviour
             for (int f = 0; f < fields.Length; f++)
             {
                 fields[f] = fields[f].TrimStart(' ', surround);
-                fields[f] = fields[f].TrimEnd(surround);
+                fields[f] = fields[f].TrimEnd('\r', surround);
                 Debug.Log(fields[f]);
             }
 
