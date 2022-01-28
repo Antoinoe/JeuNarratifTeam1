@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         public string name;
         public string description;
         public DialogueTrigger dialogue;
+        public bool hasShake;
     }
 
     public static GameManager Instance { get { return _instance; } }
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public int currentStage = 0;
     [SerializeField] List<interactable> timeline;
+    int shakeInt = 5;
+    bool plusPos;
 
     private void Start()
     {
@@ -71,6 +74,44 @@ public class GameManager : MonoBehaviour
         
         if(timeline.Count >= currentStage && timeline[currentStage].dialogue != null )
             timeline[currentStage].dialogue.TriggerDialogue();
+
+        if (timeline[currentDialogue].hasShake)
+        {
+            StartShake();
+        }
         
+    }
+
+    public void StartShake()
+    {
+        shakeInt = 5;
+        Shake();
+    }
+
+    private void Shake()
+    {
+        RectTransform pos = hub.GetComponent<RectTransform>();
+        if (plusPos)
+        {
+            pos.anchoredPosition = new Vector2(pos.anchoredPosition.x + 10, pos.anchoredPosition.y + 10);
+            plusPos = !plusPos;
+        }
+        else
+        {
+            pos.anchoredPosition = new Vector2(pos.anchoredPosition.x - 10, pos.anchoredPosition.y - 10);
+            plusPos = !plusPos;
+        }
+
+        if (shakeInt > 0)
+        {
+            shakeInt--;
+            StartCoroutine(Shakee());
+        }
+    }
+
+    IEnumerator Shakee()
+    {
+        yield return new WaitForSeconds(.5f);
+        Shake();
     }
 }

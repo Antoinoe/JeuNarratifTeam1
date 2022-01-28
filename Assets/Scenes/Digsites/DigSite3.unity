@@ -442,7 +442,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfArtifacts: 4
   finishCanvas: {fileID: 1411817084}
-  dialogue: []
+  dialogue:
+  - {fileID: 0}
 --- !u!4 &564939532
 Transform:
   m_ObjectHideFlags: 0

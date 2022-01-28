@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a17c2fbc2ad9c4dbefd84e721f8acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageToUnlock: 0100000003000000060000000a000000
+  stageToUnlock: 01000000030000000600000009000000
   artifactsToUnlock:
   - {fileID: 842108122}
   - {fileID: 853658518}
@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2c62aac38785d438aa248d2b64696d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artifactNum: 4
+  artifactNum: 3
   puzzleSceneName: PuzzleMinigame3
   viewSceneName: 3D3
 --- !u!114 &1187111490
