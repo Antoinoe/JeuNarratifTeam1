@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public UnityEvent puzzleFinished;
+    public GameObject puzzleFinished;
     [SerializeField] Puzzle[] puzzlePieces;
+    [SerializeField] string sceneToUnload;
+    public int artifactNum;
 
     private void Start()
     {
@@ -30,8 +32,20 @@ public class PuzzleManager : MonoBehaviour
 
         if (puzzleDone)
         {
-            puzzleFinished.Invoke();
-            Debug.Log("puzzle done");
+            puzzleFinished.SetActive(true);
+            PlayerPrefs.SetInt("Artifact" + artifactNum, 1);
+            //GameManager.Instance.NextStage();
+            Debug.Log("puzzle finished");
         }
+    }
+
+    public void ReturnToHub()
+    {
+        GameManager.Instance.UnloadSceneAsync(sceneToUnload);
+    }
+    public void Goto3dView(string sceneToLoad)
+    {
+        GameManager.Instance.returnTohubWithNextStag = true;
+        GameManager.Instance.LoadAndUnloadSceneAsync( sceneToLoad,sceneToUnload);
     }
 }

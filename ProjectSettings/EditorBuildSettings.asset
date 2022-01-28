@@ -6,9 +6,51 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Nono Stuff/WelcomeScene.unity
+    path: Assets/Nono Stuff/Scenes/WelcomeScene.unity
     guid: 198c07318ccd6f54fb250b84c10fe402
   - enabled: 1
-    path: Assets/Nono Stuff/Hub.unity
-    guid: 51e1b680a46652e488ab34be1bfc0551
+    path: Assets/Scenes/MainHub.unity
+    guid: 1fbf515fa1b942d4d82386165103a62d
+  - enabled: 1
+    path: Assets/Scenes/Table.unity
+    guid: 824bb0475f2e4ac4a99a5733d4814bb0
+  - enabled: 1
+    path: Assets/Scenes/Door.unity
+    guid: b85104c56faf6474e8066a7042c44a9e
+  - enabled: 1
+    path: Assets/Scenes/Digsites/DigSiteTuto.unity
+    guid: 403eef9f4f51ecf4a9d943086bc9c544
+  - enabled: 1
+    path: Assets/Scenes/Digsites/DigSite1.unity
+    guid: 214fa6be293133d46960667266536d07
+  - enabled: 1
+    path: Assets/Scenes/Digsites/DigSite2.unity
+    guid: 4d298bfb653713a429fe5adbee1f7df8
+  - enabled: 1
+    path: Assets/Scenes/Digsites/DigSite3.unity
+    guid: 0688feebbc29a6241aabff539b4c8b73
+  - enabled: 1
+    path: Assets/Scenes/Puzzles/PuzzleMinigameTuto.unity
+    guid: 3af80a99eef2101469f470ab3d226b20
+  - enabled: 1
+    path: Assets/Scenes/Puzzles/PuzzleMinigame1.unity
+    guid: 079d38f74306d8946be423bad63972f1
+  - enabled: 1
+    path: Assets/Scenes/Puzzles/PuzzleMinigame2.unity
+    guid: 21f88846b6b423d43ab12ad6ab3f2e6f
+  - enabled: 1
+    path: Assets/Scenes/Puzzles/PuzzleMinigame3.unity
+    guid: 0a4ecedec0d92444f8d0e86682076d76
+  - enabled: 1
+    path: Assets/Scenes/Inspect/3D.unity
+    guid: 41213be93f68c4149905b52b2a385f46
+  - enabled: 1
+    path: Assets/Scenes/Inspect/3D1.unity
+    guid: 61eea44f78831fc4f854b164aa0d5a9f
+  - enabled: 1
+    path: Assets/Scenes/Inspect/3D2.unity
+    guid: 11fb22092cdc80e4f85c2fa3da5cd37b
+  - enabled: 1
+    path: Assets/Scenes/Inspect/3D3.unity
+    guid: ceb2cb3645890fb4a87118de84fa443f
   m_configObjects: {}

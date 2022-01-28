@@ -6,7 +6,7 @@ public class Dig : MonoBehaviour
 {
     [SerializeField] private GameObject maskPrefab;
     private Touch theTouch;
-    private bool canDig;
+    public bool canDig;
     Ray ray;
 
     private void Update()
@@ -23,7 +23,7 @@ public class Dig : MonoBehaviour
                 if (hit.collider != null)
                 {
                     hit.collider.gameObject.SetActive(false);
-                    GameManager.Instance.ArtifactFound();
+                    DigManager.Instance.ArtifactFound();
                 }
 
             }
